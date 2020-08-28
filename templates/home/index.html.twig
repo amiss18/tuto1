@@ -4,31 +4,27 @@
 
 {% block body %}
 
-    <div class="example-wrapper">
-        <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="example-wrapper mb-5 mt-5">
+        <h1 class="text-center py-4">Movies data from Wikipedia✅</h1>
 
-        This friendly message is coming from:
-        <ul>
-            <li>Your controller at <code><a
-                            href="{{ '/var/www/html/sf4/bt/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code>
-            </li>
-            <li>Your template at <code><a
-                            href="{{ '/var/www/html/sf4/bt/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code>
-            </li>
-        </ul>
-        <div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ipsam atque fugiat, ducimus
-                explicabo. Explicabo accusantium facilis, illo illum libero molestiae natus! Nulla nihil repudiandae,
-                voluptatum mollitia fuga ab?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta maxime ipsam atque fugiat, ducimus
-                explicabo. Explicabo accusantium facilis, illo illum libero molestiae natus! Nulla nihil repudiandae,
-                voluptatum mollitia fuga ab?
-            </p>
+    </div>
 
-        </div>
+
+
+
+    <div class="grid-container">
+        {% for item  in items %}
+
+                <div class="card grid-item" >
+                    <img src="{{  asset('build/images/'~item.picture) }}" class="card-img-top " alt="{{ item.title }}" height="200px" >
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.title }}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+            </div>
+        {% else %} <p> not found</p>
+        {% endfor %}
 
 
     </div>

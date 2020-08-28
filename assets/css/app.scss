@@ -74,6 +74,24 @@ main{
   text-align: center;
 }
 
-#portfolio {
-  background: #356;
+
+//movies grid
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* or simply "1fr 1fr;" */
+  grid-row-gap: 1.5rem;
+  grid-column-gap: $grid-gutter-width; //1.5rem
 }
+
+.grid-item {
+
+  background-color: #f8f8f8;
+  box-shadow: 0 0 3px #666;
+  text-align: center;
+
+  img{
+    max-width: 100%;
+  }
+}
+
