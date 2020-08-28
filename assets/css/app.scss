@@ -1,0 +1,79 @@
+// Required
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~font-awesome";
+
+$theme-colors: (
+        "primary": #f50057,
+        "secondary": #c62828,
+        "success": $success,
+        "info": $info,
+        "warning": $warning,
+        "danger": $danger,
+        "light": $light,
+        "dark": $dark
+);
+
+$main-color: map_get($theme-colors, 'primary');
+
+
+@import '~bootstrap';
+
+footer {
+  background: map_get($theme-colors, 'primary');
+  margin-top: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  p {
+    color: darken(#fff, .8);
+    font-size: 13px;
+    margin-bottom: 0.25em
+  }
+
+  #footer-resources {
+    text-align: right;
+    i {
+      color: darken(#fff, .8);
+      font-size: 28.5px;
+      margin-left: 0.5em
+    }
+  }
+
+}
+
+
+
+body {
+
+
+  background: $light;
+
+}
+main{
+  min-height: 40vh;
+}
+.carousel {
+  height: 560px;
+  opacity: .8;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-item,
+.carousel-inner {
+  height: 100%;
+  width: auto;
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+#portfolio {
+  background: #356;
+}

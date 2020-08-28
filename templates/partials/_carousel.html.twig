@@ -1,0 +1,49 @@
+{% set items = [
+
+    {
+        'title' 	  : "The Best Years of Our Lives (1946)",
+        "description" : " landmark, classic drama about three WWII veterans attempting readjustment to peacetime life and discovering that they have fallen behind. ",
+        "picture"  	 : "image-1.jpg",
+    },
+    {
+        'title' 	  : "All Quiet On The Western Front (1930)",
+        "description" : " Based on Erich Maria Remarque's timeless, pacifistic anti-war novel, this poetically brilliant epic about the horrors of war was hugely popular in its day ",
+        "picture"  	 : "image-2.jpg",
+    },
+    {
+        'title' 	  : "Citizen Kane (1941)",
+        "description" : " his is Welles' greatest achievement, and a landmark of cinema history - often voted the greatest film ever made ",
+        "picture"  	 :"image-3.jpg",
+    }
+]
+%}
+
+
+<div id="carouselExampleCaptions" class="carousel slide mt-0" data-ride="carousel" >
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        {% for item in items %}
+            <div class="carousel-item {{ loop.first ? 'active': '' }} ">
+                <img src="{{ asset('build/images/'~item.picture) }}" class="d-block img-fluid" alt="...">
+                <div class="carousel-caption d-none d-md-block bg-primary text-white">
+                    <h5 class="text-"> {{  item.title }}</h5>
+                    <p >{{  item.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
