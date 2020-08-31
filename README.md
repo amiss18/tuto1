@@ -26,6 +26,12 @@ CSS can be found in the `assets/css` folder and JS can be found in the `assets/j
 $ yarn install
 ```
 
+Build assets
+
+```bash
+$ yarn run dev
+```
+
 New files will be generated in `public/build/` directory.
 
 Usage
